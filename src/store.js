@@ -4,7 +4,10 @@ import Vuex from 'vuex';
 Vue.use(Vuex);
 
 export default new Vuex.Store({
-    state: {},
+    state: {
+        recipes: [],
+        apiUrl: 'http://api.edamam.com/search'
+    },
     mutations: {},
     actions: {}
 });
