@@ -7,7 +7,7 @@
             <v-flex xs12 sm12 md4>
                 <v-card>
                     <v-responsive>
-                        <v-img src="http://source.unsplash.com/hjCA3ecCXAQ" height="500px">
+                        <v-img src="http://source.unsplash.com/R1_0gSXks5Y" height="500px">
                             <v-container fill-height fluid>
                                 <v-layout fill-height>
                                     <v-flex xs12 align-end flexbox>
@@ -19,8 +19,8 @@
                     </v-responsive>
                     <v-card-text>
                         <div>
-                            <h3 class="headline mb-0">Keto</h3>
-                            <div>The Keto diet is a high-fat, adequate-protein, low-carbohydrate diet. The diet forces the body to burn fats rather than carbohydrates by putting the body into ketosis.
+                            <h3 class="headline mb-0">키토제닉 다이어트</h3>
+                            <div>Keto 다이어트는 고지방, 적절한 단백질, 저 탄수화물 식단입니다. 식이 요법은 탄수화물보다 지방질을 태우도록 강요합니다.
                             </div>
                         </div>
                     </v-card-text>
@@ -32,7 +32,7 @@
             <v-flex xs12 sm12 md4>
                 <v-card>
                     <v-responsive>
-                        <v-img src="http://source.unsplash.com/6S27S6pZ6o0" height="500px">
+                        <v-img src="http://source.unsplash.com/Pw7st6DXLZQ" height="500px">
                             <v-container fill-height fluid>
                                 <v-layout fill-height>
                                     <v-flex xs12 align-end flexbox>
@@ -44,8 +44,8 @@
                     </v-responsive>
                     <v-card-text>
                         <div>
-                            <h3 class="headline mb-0">Paleo</h3>
-                            <div>The Paleo diet requires the sole or predominant consumption of foods presumed to have been the only foods available to or consumed by humans during the Paleolithic era.
+                            <h3 class="headline mb-0">팔레오 다이어트</h3>
+                            <div>Paleo 식단은 구석기 시대에 인간이 이용할 수있는 유일한 식품으로 추정되는 식품의 유일한 소비 또는 소비를 요구합니다.
                             </div>
                         </div>
                     </v-card-text>
@@ -57,7 +57,7 @@
             <v-flex xs12 sm12 md4>
                 <v-card>
                     <v-responsive>
-                        <v-img src="http://source.unsplash.com/1SPu0KT-Ejg" height="500px">
+                        <v-img src="http://source.unsplash.com/r-dChNeNKk8" height="500px">
                             <v-container fill-height fluid>
                                 <v-layout fill-height>
                                     <v-flex xs12 align-end flexbox>
@@ -69,8 +69,8 @@
                     </v-responsive>
                     <v-card-text>
                         <div>
-                            <h3 class="headline mb-0">Vegan</h3>
-                            <div>The vegan diet abstains from the use of animal products. The vegan diet does not consume meat, diary products, eggs or any all other animal-derived ingredients.
+                            <h3 class="headline mb-0">베지테리언 다이어트</h3>
+                            <div>완전 채식은 동물성 제품 사용을 삼가합니다. 비건 채식은 고기, 일기 제품, 계란 또는 기타 동물성 원료를 소비하지 않습니다.
                             </div>
                         </div>
                     </v-card-text>
