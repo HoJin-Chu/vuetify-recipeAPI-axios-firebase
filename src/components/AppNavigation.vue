@@ -32,7 +32,7 @@ export default {
     name: 'AppNavigation',
     data() {
         return {
-            appTitle: 'Meal Prep',
+            appTitle: 'CHU',
             drawer: false,
             items: [
                 { title: 'Menu' },
