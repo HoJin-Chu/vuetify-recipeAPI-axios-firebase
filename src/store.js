@@ -11,7 +11,13 @@ export default new Vuex.Store({
         recipes: [],
         apiUrl: 'http://api.edamam.com/search',
         user: null,
-        isAuthenticated: false
+        isAuthenticated: false,
+        userRecipes: []
+    },
+    getters: {
+        isAuthenticated(state) {
+            return state.user !== null && state.user !== undefined;
+        }
     },
     mutations: {
         setRecipes(state, payload) {
@@ -22,6 +28,9 @@ export default new Vuex.Store({
         },
         setIsAuthenticated(state, payload) {
             state.isAuthenticated = payload;
+        },
+        setUserRecipes(state, payload) {
+            state.userRecipes = payload;
         }
     },
     actions: {
@@ -49,10 +58,12 @@ export default new Vuex.Store({
                 .then(user => {
                     commit('setUser', user);
                     commit('setIsAuthenticated', true);
+                    router.push('/Signin');
                 })
                 .catch(() => {
                     commit('setUser', null);
                     commit('setIsAuthenticated', false);
+                    router.push('/');
                 });
         },
         userLogin(context, { email, password }) {
@@ -69,6 +80,36 @@ export default new Vuex.Store({
                     context.commit('setUser', null);
                     context.commit('setIsAuthenticated', false);
                     router.push('/');
+                });
+        },
+        userSignOut(context){
+            firebase
+                .auth()
+                .signOut()
+                .then(() => {
+                    context.commit('setUser', null);
+                    context.commit('setIsAuthenticated', false);
+                    router.push('/');
+                })
+                .catch(() => {
+                    context.commit('setUser', null);
+                    context.commit('setIsAuthenticated', false);
+                    router.push('/');
+                });
+        },
+        addRecipe(context, payload){
+            firebase
+                .database()
+                .ref('users')
+                .child(context.state.user.user.uid)
+                .push(payload.label);
+        },
+        getUserRecipes(context){
+            return firebase
+                .database()
+                .ref('users/' + context.state.user.user.uid)
+                .once('value', snapshot => {
+                    context.commit('setUserRecipes', snapshot.val());
                 });
         }
     }

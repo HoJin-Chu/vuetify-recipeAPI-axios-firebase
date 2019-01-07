@@ -5,10 +5,11 @@ import About from './views/About';
 import Menu from './views/Menu';
 import Signin from './views/Signin';
 import Join from './views/Join';
+import store from '@/store';
 
 Vue.use(Router);
 
-export default new Router({
+const router = new Router({
     mode: 'history',
     base: process.env.BASE_URL,
     routes: [
@@ -20,7 +21,10 @@ export default new Router({
         {
             path: '/About',
             name: 'About',
-            component: About
+            component: About,
+            meta: {
+                authRequired: true // route 가드
+            }
         },
         {
             path: '/Menu',
@@ -39,3 +43,21 @@ export default new Router({
         }
     ]
 });
+
+router.beforeEach((to, from, next) => { 
+    // 네이게이션 가드
+    if (to.matched.some(record => record.meta.authRequired)) {
+        if (!store.state.isAuthenticated) {
+            next({
+                path: '/Signin'
+            });
+        } else {
+            next();
+        }
+    } else {
+        next();
+    }
+});
+
+// eslint-disable-next-line prettier/prettier
+export default router;
