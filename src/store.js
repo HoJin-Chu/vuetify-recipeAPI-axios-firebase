@@ -42,7 +42,7 @@ export default new Vuex.Store({
                         app_id: 'ab1a5eca',
                         app_key: '7856433beec5a5f030677e62d50c227f',
                         from: 0,
-                        to: 18
+                        to: 9
                     }
                 });
                 context.commit('setRecipes', response.data.hits);
@@ -58,7 +58,7 @@ export default new Vuex.Store({
                 .then(user => {
                     commit('setUser', user);
                     commit('setIsAuthenticated', true);
-                    router.push('/Signin');
+                    router.push('/about');
                 })
                 .catch(() => {
                     commit('setUser', null);
@@ -82,7 +82,7 @@ export default new Vuex.Store({
                     router.push('/');
                 });
         },
-        userSignOut(context){
+        userSignOut(context) {
             firebase
                 .auth()
                 .signOut()
@@ -97,19 +97,19 @@ export default new Vuex.Store({
                     router.push('/');
                 });
         },
-        addRecipe(context, payload){
+        addRecipe({ state }, payload) {
             firebase
                 .database()
                 .ref('users')
-                .child(context.state.user.user.uid)
+                .child(state.user.user.uid)
                 .push(payload.label);
         },
-        getUserRecipes(context){
+        getUserRecipes({ state, commit }) {
             return firebase
                 .database()
-                .ref('users/' + context.state.user.user.uid)
+                .ref('users/' + state.user.user.uid)
                 .once('value', snapshot => {
-                    context.commit('setUserRecipes', snapshot.val());
+                    commit('setUserRecipes', snapshot.val());
                 });
         }
     }
