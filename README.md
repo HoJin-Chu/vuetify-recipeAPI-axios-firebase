@@ -1,4 +1,4 @@
-# meal-prep
+# VUETIFY-RECIPE WEBSITE
 
 ## Project setup
 ```
