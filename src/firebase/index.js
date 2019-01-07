@@ -1,12 +1,13 @@
 import firebase from 'firebase';
 
 var config = {
-    apiKey: 'AIzaSyAK1z5sxqUPaNml9w31sB4rSlji-CoHti8',
-    authDomain: 'meal-prep-6bd2b.firebaseapp.com',
-    databaseURL: 'https://meal-prep-6bd2b.firebaseio.com',
-    projectId: 'meal-prep-6bd2b',
-    storageBucket: 'meal-prep-6bd2b.appspot.com',
-    messagingSenderId: '108308615993'
+    apiKey: 'AIzaSyCX2bad8nMq0S4GKx5HqypaOuDVczl9i8U',
+    authDomain: 'vue-recipe-22dd9.firebaseapp.com',
+    databaseURL: 'https://vue-recipe-22dd9.firebaseio.com',
+    projectId: 'vue-recipe-22dd9',
+    storageBucket: 'vue-recipe-22dd9.appspot.com',
+    messagingSenderId: '788480973926'
 };
 
-firebase.initializeApp(config);
+// eslint-disable-next-line prettier/prettier
+firebase.initializeApp(config)

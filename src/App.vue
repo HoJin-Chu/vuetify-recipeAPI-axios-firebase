@@ -9,6 +9,7 @@
 </template>
 
 <script>
+import 'firebase/database';
 import AppNavigation from '@/components/AppNavigation';
 
 export default {

@@ -17,7 +17,7 @@
                     </v-card-text>
 
                     <v-card-actions>
-                        <v-btn color="green" dark @click="orderRecipe(item)">Order</v-btn>
+                        <v-btn color="green" dark @click="orderRecipe({item})">Order</v-btn>
                     </v-card-actions>
                 </v-card>
             </v-flex>
